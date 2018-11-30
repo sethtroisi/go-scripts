@@ -30,7 +30,7 @@ with open(path, 'r') as data, open(new_path, 'w') as result:
         result.write(line)
         count_moves += move_count(line)
         assert count_moves <= moves
-        count_parens += delta_parens(d)
+        count_parens += delta_parens(line)
         assert count_parens >= 0
 
         if count_moves == moves:
