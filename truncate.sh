@@ -2,14 +2,14 @@
 
 COLLECTION=../"minigo/collection.csv"
 COLLECTION_SRC=~/"Projects/training/badukmovies-pro-75komi-1000/"
-COLLECTION_DIR=~/"Projects/training/problem-collection2/"
+COLLECTION_DIR=~/"Projects/training/problem-collection3/"
 
 echo "collection: $COLLECTION"
 echo "dir: $COLLECTION_DIR"
 
 if [ ! -f "$COLLECTION" ]; then
     cd ../minigo/
-    BOARD_SIZE=19 python3 oneoffs/subsample_pro.py --sgf_dir "$COLLECTION_SRC" --num_positions 10
+    BOARD_SIZE=19 python3 oneoffs/subsample_pro.py subsample --sgf_dir "$COLLECTION_SRC" --num_positions 10
     cd -
 fi
 
