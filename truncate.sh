@@ -1,8 +1,8 @@
 # Expand a collection of problems into a set of SGFs.
 
 COLLECTION=../"minigo/collection.csv"
-COLLECTION_SRC=~/"Projects/training/badukmovies-pro-75komi-1000/"
-COLLECTION_DIR=~/"Projects/training/problem-collection3/"
+COLLECTION_SRC=~/"Projects/training/badukmovies-pro-75komi-small/"
+COLLECTION_DIR=~/"Projects/training/problem-collection4/"
 
 echo "collection: $COLLECTION"
 echo "dir: $COLLECTION_DIR"
