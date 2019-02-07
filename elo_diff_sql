@@ -1,0 +1,4 @@
+-- cat elo_diff_sql | sqlite3 ../cloudygo/instance/clouds.db
+.mode csv
+.output data/elo_by_speed.csv
+select model_id_1, model_id_2, trim(substr(filename, length(filename)-11, 8), '0123456789_-'), count(*), sum(black_won) from eval_games where (filename like '%_slow%' or filename like '%_fast%' or filename like '%_rapid%') and model_id_1 between 87000000 and 87000801 group by 1,2,3;
