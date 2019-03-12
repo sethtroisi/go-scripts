@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-from collections import defaultdict
+from collections import defaultdict, Counter
 import math
 from scipy import stats
 
@@ -31,6 +31,13 @@ for r in data:
 
 for speed in ["rapid", "fast", "slow"]:
     print (speed, "pairings:", len(set(tuple(r[:2]) for r in data if r[2] == speed)))
+print()
+
+diff_counter = Counter()
+for r in data:
+    diff_counter[(r[2], abs(int(r[0]) - int(r[1])))] += r[3]
+for (speed, diff), count in sorted(diff_counter.items()):
+    print (speed, diff, "pairings:", count)
 
 def elo(key):
     if not (key in wins and key in games):
